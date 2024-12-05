@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Scribbles-Regular';
+    src: url('./scribbles/Scribbles-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+    font-family: 'Scribbles-Regular';
+    src: url('./scribbles/Scribbles-Regular.ttf') format('truetype');
+}

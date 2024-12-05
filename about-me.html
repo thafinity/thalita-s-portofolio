@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About me</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @font-face {
+            font-family: 'Scribbles-Regular';
+            src: url('./scribbles/Scribbles-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Optional: center text */
+            padding-bottom: 60px; /* Prevent overlap with "back" image */
+        }
+
+        /* Image above the text (UI image) */
+        .fixed img {
+            width: 400px; /* Larger width for the first image */
+            height: 450px; /* Larger height for the first image */
+            margin-bottom: 20px; /* Space between image and text */
+        }
+
+        /* Typing animation text */
+        .typing-animation {
+            font-family: 'Scribbles-Regular', sans-serif;
+            font-weight: bold;
+            font-size: 8vw; /* Adjust font size */
+            width: 22ch;
+            animation: 
+                typing 2s steps(22) 1s infinite forwards,
+                blink .5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid black;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 22ch;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .max-w-xl {
+            max-width: 36rem; /* Adjust width */
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .text-4xl {
+            font-size: 2.5rem; /* Adjust size */
+        }
+
+        /* "Back" image - smaller and positioned below the paragraph */
+        .back-img img {
+            width: 50px; /* Smaller size for the back image */
+            height: 50px; /* Smaller height */
+            margin-top: 20px; /* Space between paragraph and image */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Image above the text (UI image) -->
+    <div class="fixed">
+        <img src="./image/ui.jpg" alt="my photo">
+    </div>
+    
+    <!-- Typing animation text -->
+    <div class="typing-animation">Hello my name is Thalita</div>
+    <p class="text-center max-w-xl px-4 mt-4 text-gray-700 font-bold text-8xl"> 
+        I am a computer engineering student from Universitas Indonesia. 
+        I have a deep interest in full-stack development,
+        I am open and looking forward to learning by doing real-life projects. 
+    </p>
+
+    <!-- Smaller "Back" image positioned below the paragraph -->
+    <div class="back-img">
+        <a href="index.html">
+        <img src="./image/back.png" alt="back">
+        </a>
+    </div>
+
+</body>
+</html>
+
+
+

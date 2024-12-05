@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My work</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body> 
+    <!--Header-->
+    <div class="flex justify-between items-center px-4 sm:px-10 w-full sm:w-screen">
+     <a href="./index.html" class="flex items-center">
+        <img src="./image/back.png" 
+            class="w-40 animate-pulse hover:scale-110 sm:hover:scale-125 active:scale-105 sm:active:scale-110 transition-all cursor-pointer" alt="About Me">
+        </a>
+         <img src="./image/work.png" class="w-full sm:w-xl" alt="My Work">
+    </div>
+    
+    <!--Body-->
+    <div class="flex flex-col items-center w-full justify-center mt-10">
+        <div class="relative">
+            <img src="./image/border.png" class="w-xl z-0">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-1/2 h-1/2">
+                <div id="slideshow" class="relative w-full h-full">
+                    <img src="./image/thaltrans1.jpg" class="absolute inset-0 w-full h-full object-cover opacity-0">
+                    <img src="./image/thaltrans2.jpg" class="absolute inset-0 w-full h-full object-cover opacity-0">
+                    <img src="./image/thaltrans4.jpg" class="absolute inset-0 w-full h-full object-cover opacity-0">
+                </div>
+            </div>
+        </div>
+        <a href="https://thalitaatransportation.on.drv.tw/Thaltrans%20IF%20PAS%20/"> 
+        <img src="./image/title.jpg" class="w-96 h-20 z-20 mt-4">
+        </a>
+        <p class="text-center max-w-xl px-4 mt-4 text-gray-700 font-bold text-4xl"> 
+            Thaltrans adalah webiste penjualan bus, disini user dapat memilih jenis bus yang mereka inginkan dari size, harga, hingga fasilitas lainnya.
+            Notes: click "thal trans" to get redirected to the website
+        </p>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('#slideshow img');
+            let currentSlide = 0;
+
+            function nextSlide() {
+                // Hide current slide
+                slides[currentSlide].classList.remove('opacity-100');
+                slides[currentSlide].classList.add('opacity-0');
+                
+                // Move to next slide
+                currentSlide = (currentSlide + 1) % slides.length;
+                
+                // Show next slide
+                slides[currentSlide].classList.remove('opacity-0');
+                slides[currentSlide].classList.add('opacity-100');
+            }
+
+            // Initial setup
+            slides.forEach((slide, index) => {
+                slide.classList.add('transition-opacity', 'duration-1000', 'ease-in-out');
+            });
+
+            // First slide visible
+            slides[0].classList.remove('opacity-0');
+            slides[0].classList.add('opacity-100');
+
+            // Change slide every 5 seconds
+            setInterval(nextSlide, 3000);
+        });
+    </script>
+</body>
+</html>
